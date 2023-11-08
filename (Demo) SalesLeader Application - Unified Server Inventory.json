@@ -1,0 +1,652 @@
+{
+  "properties": {
+    "lenses": {
+      "0": {
+        "order": 0,
+        "parts": {
+          "0": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "colSpan": 18,
+              "rowSpan": 1
+            },
+            "metadata": {
+              "inputs": [],
+              "type": "Extension/HubsExtension/PartType/MarkdownPart",
+              "settings": {
+                "content": {
+                  "content": "<div style='line-height:50px;'>\n<span style='font-size:20px;font-weight:bold'>SalesLeader - Unified Server Inventory - </span>\n<span style='font-size:20px'>This Dashboard provides insights into the multicloud presence of the SalesLeader Application</span>\n</div>",
+                  "title": "",
+                  "subtitle": "",
+                  "markdownSource": 1,
+                  "markdownUri": ""
+                }
+              }
+            }
+          },
+          "1": {
+            "position": {
+              "x": 0,
+              "y": 1,
+              "colSpan": 3,
+              "rowSpan": 3
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "chartType",
+                  "isOptional": true
+                },
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "// Count of all Servers\nresources\n| where type =~ 'microsoft.hybridcompute/machines'\n| extend application = tostring(tags.Application)\n| where application ==\"SalesLeader\"\n| summarize ServerCount = count()",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQuerySingleValueTile",
+              "settings": {},
+              "partHeader": {
+                "title": "All Servers",
+                "subtitle": "Servers attached to SalesLeader"
+              }
+            }
+          },
+          "2": {
+            "position": {
+              "x": 3,
+              "y": 1,
+              "colSpan": 7,
+              "rowSpan": 6
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 2",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "value": 1,
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\n| where type =~ 'microsoft.hybridcompute/machines'\n| extend osSku = tostring(properties.osSku)\n| extend application = tostring(tags.Application)\n| where application ==\"SalesLeader\"\n| summarize ServerCount = count() by osSku",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryChartTile",
+              "settings": {},
+              "partHeader": {
+                "title": "Servers by OS",
+                "subtitle": "Servers for SalesLeader by OS Version"
+              }
+            }
+          },
+          "3": {
+            "position": {
+              "x": 10,
+              "y": 1,
+              "colSpan": 8,
+              "rowSpan": 6
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "value": 1,
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\r\n| where type == \"microsoft.azurearcdata/sqlserverinstances\"\r\n| extend application = tostring(tags.Application)\r\n| where application ==\"SalesLeader\"\r\n| summarize Count=count() by tostring(properties['version'])",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryChartTile",
+              "settings": {},
+              "partHeader": {
+                "title": "SQL Servers by Version",
+                "subtitle": "Count of SQL Servers attached to SalesLeader by Version"
+              }
+            }
+          },
+          "4": {
+            "position": {
+              "x": 0,
+              "y": 4,
+              "colSpan": 3,
+              "rowSpan": 3
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "isOptional": true
+                },
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "// Count of all SQL Server Instances\nresources\n| where  type == \"microsoft.azurearcdata/sqlserverinstances\"\n| summarize Servers=count()",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQuerySingleValueTile",
+              "settings": {
+                "content": {}
+              },
+              "partHeader": {
+                "title": "All SQL Server Instances",
+                "subtitle": "SQL Server Instances attached to SalesLeader"
+              }
+            }
+          },
+          "5": {
+            "position": {
+              "x": 0,
+              "y": 7,
+              "colSpan": 6,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "value": 2,
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\n| where type == \"microsoft.hybridcompute/machines\"\n| extend application = tostring(tags.Application)\n| where application ==\"SalesLeader\"\n| extend location = tostring(tags.Location)\n| summarize ServerCount = count() by location",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryChartTile",
+              "settings": {},
+              "partHeader": {
+                "title": "Servers by Location",
+                "subtitle": "Distribution of Servers across multicloud"
+              }
+            }
+          },
+          "6": {
+            "position": {
+              "x": 6,
+              "y": 7,
+              "colSpan": 6,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 2",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "value": 2,
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\n| where type == \"microsoft.hybridcompute/machines\"\n| extend application = tostring(tags.Application)\n| where application ==\"SalesLeader\"\n| extend location = tostring(tags.Location)\n| extend coreCount = toint(properties.detectedProperties.coreCount)\n| summarize ServerCount = sum(coreCount) by location",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryChartTile",
+              "settings": {},
+              "partHeader": {
+                "title": "Cores by Location",
+                "subtitle": "Distribution of Cores for SalesLeader across multicloud"
+              }
+            }
+          },
+          "7": {
+            "position": {
+              "x": 0,
+              "y": 12,
+              "colSpan": 6,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "value": 2,
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\n| where type == \"microsoft.hybridcompute/machines\"\n| extend Cores = toint (properties.detectedProperties.logicalCoreCount)\n| extend application = tostring(tags.Application)\n| where application ==\"SalesLeader\"\n| extend Application = tostring(tags.Division)\n| extend Location = tostring(tags.Type)\n| extend osSku = properties.osSku\n| extend os_Name = properties.osname \n| extend osType = properties.osType\n| extend ESU = properties.licenseProfile.esuProfile.licenseAssignmentState\n| project Name=name, ESU, Application, Location, os_Name, osType\n| summarize ServerCount = count() by tostring(osType)",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryChartTile",
+              "settings": {},
+              "partHeader": {
+                "title": "OS Type",
+                "subtitle": "Operating System Type across OneAdvanced Estate Servers"
+              }
+            }
+          },
+          "8": {
+            "position": {
+              "x": 6,
+              "y": 12,
+              "colSpan": 12,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "chartType",
+                  "isOptional": true
+                },
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\r\n| where type == \"microsoft.hybridcompute/machines\"\r\n| extend application = tostring(tags.Application)\r\n| where application ==\"SalesLeader\"\r\n| extend Cores = toint (properties.detectedProperties.logicalCoreCount)\r\n| extend location = tostring(tags.Location)\r\n| extend osSku = tostring(properties.osSku)\r\n| extend osType = tostring(properties.osType)\r\n| summarize ServerCount = count() by location, osType, osSku",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryGridTile",
+              "settings": {},
+              "partHeader": {
+                "title": "OS Type Breakdown by Application, Location",
+                "subtitle": "Distribution of  OS Types across Applications & Locations"
+              }
+            }
+          },
+          "9": {
+            "position": {
+              "x": 0,
+              "y": 17,
+              "colSpan": 18,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "chartType",
+                  "isOptional": true
+                },
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\r\n| where type == 'microsoft.hybridcompute/machines'\r\n| extend application = tostring(tags.Application)\r\n| where application ==\"SalesLeader\"\r\n| extend osSku = tostring(properties.osSku)\r\n| join kind=inner (\r\n    resourcecontainers\r\n    | where type == 'microsoft.resources/subscriptions'\r\n    | project subscriptionId, subScriptionName = name)\r\n    on subscriptionId\r\n| summarize ServerCount = count() by subScriptionName, resourceGroup, osSku",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryGridTile",
+              "settings": {},
+              "partHeader": {
+                "title": "Servers per Subscription, Resource Group",
+                "subtitle": "Servers across all subscriptions, resource groups"
+              }
+            }
+          },
+          "10": {
+            "position": {
+              "x": 0,
+              "y": 22,
+              "colSpan": 18,
+              "rowSpan": 6
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "value": 1,
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\n| where type == \"microsoft.hybridcompute/machines\"\n| extend application = tostring(tags.Application)\n| where application ==\"SalesLeader\"\n| extend Cores = toint(properties.detectedProperties.logicalCoreCount)\n| extend Application = tostring(tags.Division)\n| extend Location = tostring(tags.Type)\n| extend TotalPhysicalMemory =  toint(properties.detectedProperties.totalPhysicalMemoryInGigabytes)\n| extend osSku = properties.osSku\n| extend os_Name = properties.osname \n| extend osType = properties.osType\n| extend osVersion = tostring(properties.osVersion)\n| extend ESU = properties.licenseProfile.esuProfile.licenseAssignmentState\n| project Name=name, ESU, Application, Location, os_Name, osType, Cores, TotalPhysicalMemory, osVersion\n| summarize ServerCount = count() by osVersion",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryChartTile",
+              "settings": {},
+              "partHeader": {
+                "title": "Windows Version Breakdown",
+                "subtitle": "Count of WIndows Servers by OS Version"
+              }
+            }
+          },
+          "11": {
+            "position": {
+              "x": 0,
+              "y": 28,
+              "colSpan": 18,
+              "rowSpan": 6
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "isShared",
+                  "isOptional": true
+                },
+                {
+                  "name": "queryId",
+                  "isOptional": true
+                },
+                {
+                  "name": "formatResults",
+                  "isOptional": true
+                },
+                {
+                  "name": "partTitle",
+                  "value": "Query 1",
+                  "isOptional": true
+                },
+                {
+                  "name": "query",
+                  "value": "resources\n| where type == \"microsoft.hybridcompute/machines\"\n//| where properties.osName == \"windows\"\n| extend Cores = toint(properties.detectedProperties.logicalCoreCount)\n| extend ProcesserNames = tostring(properties.detectedProperties.processorNames)\n| extend Application = tostring(tags.Division)\n| extend Location = tostring(tags.Type)\n| extend TotalPhysicalMemory =  toint(properties.detectedProperties.totalPhysicalMemoryInGigabytes)\n| extend osSku = properties.osSku\n| extend os_Name = properties.osname \n| extend osType = properties.osType\n| extend osVersion = tostring(properties.osVersion)\n| extend ESU = properties.licenseProfile.esuProfile.licenseAssignmentState\n| project Name=name, ESU, Application, Location, os_Name, osType, Cores, TotalPhysicalMemory, osVersion, ProcesserNames\n| summarize ServerCount = count() by ProcesserNames",
+                  "isOptional": true
+                },
+                {
+                  "name": "chartType",
+                  "value": 1,
+                  "isOptional": true
+                },
+                {
+                  "name": "queryScope",
+                  "value": {
+                    "scope": 0,
+                    "values": []
+                  },
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/ArgQueryChartTile",
+              "settings": {},
+              "partHeader": {
+                "title": "Processer Breakdown",
+                "subtitle": "Breakdown of Processor name for all Servers"
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "model": {
+        "timeRange": {
+          "value": {
+            "relative": {
+              "duration": 24,
+              "timeUnit": 1
+            }
+          },
+          "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+        },
+        "filterLocale": {
+          "value": "en-us"
+        },
+        "filters": {
+          "value": {
+            "MsPortalFx_TimeRange": {
+              "model": {
+                "format": "utc",
+                "granularity": "auto",
+                "relative": "24h"
+              },
+              "displayCache": {
+                "name": "UTC Time",
+                "value": "Past 24 hours"
+              },
+              "filteredPartIds": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "(Demo) SalesLeader Application - Unified Server Inventory",
+  "type": "Microsoft.Portal/dashboards",
+  "location": "INSERT LOCATION",
+  "tags": {
+    "hidden-title": "(Demo) SalesLeader Application - Unified Server Inventory"
+  },
+  "apiVersion": "2015-08-01-preview"
+}
