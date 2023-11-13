@@ -1,0 +1,5 @@
+Name,Type,ResourceGroup,TAG_Customer,TAG_Location,TAG_BusinessUnit,TAG_Application
+ARCBOX-SQL,VM,arc.rg,Johnson,AWS,HR,HRPlus
+Arcbox-Ubuntu-01,VM,arc.rg,Johnson,AWS,Legal,LegalLeader
+Arcbox-Ubuntu-02,VM,arc.rg,Johnson,OnPremise,HR,HRPlus
+ARCBOX-SQL,SQLINSTANCE,arc.rg,Mathews,AWS,Legal,LegalLeader
