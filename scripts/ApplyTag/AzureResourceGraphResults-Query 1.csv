@@ -1,0 +1,2 @@
+﻿"RESOURCEGROUP","NAME","TYPE","SUBSCRIPTIONNAME","SQLVERSION","SQLEDITION","SQLTAGS"
+"arc.rg","ARCBOX-SQL","SQLInstance","ME-MngEnvMCAP976703-matgeorge-1","SQL Server 2019","Developer","{""Application"":""LegalLeader"",""BusinessUnit"":""Legal"",""Project"":""jumpstart_arcbox"",""Location"":""AWS"",""Customer"":""Mathews""}"
