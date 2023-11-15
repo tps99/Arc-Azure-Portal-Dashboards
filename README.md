@@ -6,7 +6,7 @@ This will be an evolving set of Dashboards and resources all designed to provide
 Current dashboards on the repo include:
 
 ## ARC - Rollout Progress Tracker
-
+<img src="./images/profile.jpeg">
 (Note: may take some time to run on large Arc enabled estates)
 Collects together a number of metrics and views to track Arc rollout progess and to pick up on any gaps that may exist, for example the number of VMs where SQL Server has been discovered vs the number of VMs that actually have the SQL Server Arc Agent installed.  Final Tiles provide detail queries for all Servers and all SQL Server instances, these can be downloaded as CSVs for further analysis
 
