@@ -72,6 +72,7 @@ The Tags can represent any useful grouping, some of the dashboards above assume 
 * Application - owning Application for the resource
 * DataCenter - hosting data center
 
-   
+### Step 2 - running the script with your selected CSV
+**(Matthews - can you please update here?)**
 
 
