@@ -63,6 +63,6 @@ It is possible to create the CSV from scratch however we've also included two Re
 
 Both Queries include several attributes to make it easier to identify the VM or SQL Instance, as mentioned these are ignored by the script.  The queries also include 3 empty colunns to indicate how the tagging columns can be set up.
 
-
+** Please Note: ** The queries return all resources across all subscriptions however currently the tagging script operates at subscription level (subscription name is passed as a parameter).  You will need to seperate out the CSV into 1 CSV per subscription to be processed.
 
 
