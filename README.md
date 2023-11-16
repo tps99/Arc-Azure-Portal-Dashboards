@@ -6,7 +6,7 @@ This will be an evolving set of Dashboards and resources all designed to provide
 # Installing the Dashboards
 Each Dashboard is simply a JSON file.  The simplest way to install the dashboard is to download one from the "Dashboards" folder, go to the Azure Portal, select "Dashboards", open any existing Dashboard (or create a new one) and select "Upload".  You can then select the respective JSON file and it wil be installed.
 
-** Please note ** however that it will by default be created as a "Private" Dashboard meaning only you will be able to see it.  To make it available to your colleagues you can hit the "Share" button which will publish it to a shared dashboard area or a named resource group. 
+**Please note** however that it will by default be created as a "Private" Dashboard meaning only you will be able to see it.  To make it available to your colleagues you can hit the "Share" button which will publish it to a shared dashboard area or a named resource group. 
 
 Current dashboards on the repo include:
 
@@ -41,7 +41,7 @@ Many organisations have a need to implement Extended Security Updates (ESUs) on 
 
 
 # Apply Tag Script
-One of the most useful features once Azure Arc is deployed is Tagging of resources.  Any VM or SQL Server added to Arc is also automatically added to the Azure Resource Graph and as such can be treated as an Azure resource (in fact the dashboards above function by running queries against the Azure Resource Graph, if you click on any of the tiles you can see the underlying Kusto Query Language (KQL) Query being used to return results.
+One of the most useful features once Azure Arc is deployed is Tagging of resources.  Any VM or SQL Server added to Arc is also automatically added to the Azure Resource Graph and as such can be treated as an Azure resource (in fact the dashboards above function by running queries against the Azure Resource Graph, if you click on any of the tiles you can see the underlying Kusto Query Language (KQL) Query being used to return results.)
 
 Tags can be used to group resources together by for example Business Unit or Datacenter.  However, applying tags to several hundred resources can become labourious.  Therefore as part of these repo we've included a bulk tagging capability which can take as input a CSV of VMs or SQL Server Instances alongside their associated tags.
 
@@ -68,7 +68,7 @@ It is possible to create the CSV from scratch however we've also included two Re
 
 Both Queries include several attributes to make it easier to identify the VM or SQL Instance, as mentioned these are ignored by the script.  The queries also include 3 empty colunns to indicate how the tagging columns can be set up.
 
-** Please Note: ** The queries return all resources across all subscriptions however currently the tagging script operates at subscription level (subscription name is passed as a parameter).  You will need to seperate out the CSV into 1 CSV per subscription to be processed.
+**Please Note:** The queries return all resources across all subscriptions however currently the tagging script operates at subscription level (subscription name is passed as a parameter).  You will need to seperate out the CSV into 1 CSV per subscription to be processed.
 
 The Tags can represent any useful grouping, some of the dashboards above assume the following tags are in place however it's very straightforward to edit the underlying queries & tiles to change to your own tags.
 
