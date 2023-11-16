@@ -65,4 +65,13 @@ Both Queries include several attributes to make it easier to identify the VM or 
 
 ** Please Note: ** The queries return all resources across all subscriptions however currently the tagging script operates at subscription level (subscription name is passed as a parameter).  You will need to seperate out the CSV into 1 CSV per subscription to be processed.
 
+The Tags can represent any useful grouping, some of the dashboards above assume the following tags are in place however it's very straightforward to edit the underlying queries & tiles to change to your own tags.
+
+* BusinessUnit - owning Business Domain for the Server
+* Location - On premise, on AWS or on GCP (Azure Arc operates across 3rd party clouds or on premise estates)
+* Application - owning Application for the resource
+* DataCenter - hosting data center
+
+   
+
 
