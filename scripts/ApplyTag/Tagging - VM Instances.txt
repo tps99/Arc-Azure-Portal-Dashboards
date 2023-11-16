@@ -1,0 +1,27 @@
+//Tagging - VM Instances
+//Lists all VM Instances for the purposes of Tagging
+//1st version of Tagging script operates at Subscription Level
+resources
+| where type == "microsoft.hybridcompute/machines"
+//Boolean - SQL installed (true/false)
+| extend machineId = tolower(tostring(id))
+//Operating System
+| extend osSku = tostring(properties.osSku)
+| extend osName = tostring(properties.osName)
+| extend osVersion = tostring(properties.osVersion)
+//Windows or Linux
+| extend osType = tostring(properties.osType)
+//OS Edition (Datacenter or Standard) 
+| extend osEdition = iff(properties.osSku contains "Datacenter", "Datacenter", "Standard")
+//
+// Subscription Name
+| join kind=inner (
+    resourcecontainers
+    | where type == 'microsoft.resources/subscriptions'
+    | project subscriptionId, subscriptionName = name)
+    on subscriptionId
+| project resourceGroup,name, Type = "VM", 
+//Identifying attributes, ignored by Tagging Script
+ subscriptionName, osSku, osType, osEdition, VMTags = ['tags'],
+ //Tagging columns - add as needed, prefix with "TAG_" (this is removed by script such that "TAG_Application" creates a Tag called "Application")
+ TAG_Application = "", TAG_Location = "", TAG_CommissionStatus = ""
