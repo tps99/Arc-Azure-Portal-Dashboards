@@ -4,7 +4,7 @@ This is a collection of Arc Dashboards & Scripts designed to leverage the Azure 
 This will be an evolving set of Dashboards and resources all designed to provide a summary "one stop shop" view of Azure Arc connected VMs and Arc enabled SQL Servers.  Please note some of these dashboards use custom tagging to track distribution of Arc resources - the section at the end of this readme walks through some of the scripts included on this Repo that help with bulk application of Tags to VMs and SQL Instances.
 
 # Installing the Dashboards
-Each Dashboard is simply a JSON file.  The simplest way to install the dashboard is to go into the Azure Portal, select "Dashboards", open any existing Dashboard (or create a new one) and select "Upload".  You can then select the respective JSON file and it wil be installed.
+Each Dashboard is simply a JSON file.  The simplest way to install the dashboard is to download one from the "Dashboards" folder, go to the Azure Portal, select "Dashboards", open any existing Dashboard (or create a new one) and select "Upload".  You can then select the respective JSON file and it wil be installed.
 
 ** Please note ** however that it will by default be created as a "Private" Dashboard meaning only you will be able to see it.  To make it available to your colleagues you can hit the "Share" button which will publish it to a shared dashboard area or a named resource group. 
 
