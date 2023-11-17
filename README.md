@@ -78,6 +78,36 @@ The Tags can represent any useful grouping, some of the dashboards above assume 
 * DataCenter - hosting data center
 
 ### Step 2 - running the script with your selected CSV
-**(Matthews - can you please update here?)**
+
+
+*Make sure you have Azure powershell module installed as prerequiste. To install Azure Powershell you can follow https://learn.microsoft.com/en-us/powershell/azure/install-azure-powershell?view=azps-10.4.1*
+
+#### Login to Azure
+
+```azurepowershell
+Login-AzAccount 
+```
+
+Provide your Azure Credentials to login to Azure.
+
+#### Select the Azure Subscribption
+
+Note your subscription id where you have your Azure ARC resources deployed and run the command below.
+
+```azurepowershell
+Select-AzSubscription -Subscription <"subscription id">  
+```
+
+#### Run the Script 
+
+Run the script in the path scripts/ApplyTag/Apply-AzTag.ps1 and provide the path of CSV created in **Step 1**.
+
+```azurepowershell
+Apply-AzTag.ps1 -Path ./scripts/ApplyTag/AzureArc.csv
+```
+
+
+
+
 
 
