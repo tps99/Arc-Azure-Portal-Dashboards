@@ -34,6 +34,7 @@ Current dashboards on the repo include:
 <img src="img/Arc Progress.png">
 (Note: may take some time to run on large Arc enabled estates)
 Collects together a number of metrics and views to track Arc rollout progress and to pick up on any gaps that may exist.  Arc deployments are reasonably straightforward however theer can be occasions when Servers are not fully discovered or connected to Arc.  This dashboard is intended as a tracker during that deployment and includes metrics and visualisations such as:
+
 * Total number of Servers (and Windows Servers) onboarded to Arc and how many are currently connected
 * Total number of SQL Servers discovered, and how many of those are Enterprise or Standard Edition
 * Visualisations showing the Windows Agent Status and SQL Server Agent Status breakdown (highlighting any gaps which may need to be addressed)
