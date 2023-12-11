@@ -27,7 +27,7 @@ Each Dashboard is simply a JSON file.  Installing a new dashbaord is however a l
 **Please note** however that it will by default be created as a "Private" Dashboard meaning only you will be able to see it.  To make it available to your colleagues you can hit the "Share" button which will publish it to a shared dashboard area or a named resource group. 
 
 # Current Dashboards
-There are a range of dashboards which give different overviews and slices ofthe underlying Metadata - overall the objective is to give an overview of some aspect of the Arc deployment
+There are a range of dashboards which give different overviews and slices ofthe underlying Metadata - the overall the objective is to give an overview of some aspect of the Arc deployment
 Current dashboards on the repo include:
 
 ## ARC - Rollout Progress Tracker
