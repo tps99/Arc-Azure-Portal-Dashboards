@@ -3,8 +3,25 @@ This is a collection of Arc Dashboards & Scripts designed to leverage the Azure 
 
 This will be an evolving set of Dashboards and resources all designed to provide a summary "one stop shop" view of Azure Arc connected VMs and Arc enabled SQL Servers.  Please note some of these dashboards use custom tagging to track distribution of Arc resources - the section at the end of this readme walks through some of the scripts included on this Repo that help with bulk application of Tags to VMs and SQL Instances.
 
+## Overall objectives & purpose of these Dashboards
+[Azure Arc](https://azure.microsoft.com/en-gb/products/azure-arc/) is one of the key technologies in Microsoft's Hybrid Cloud offerng. In essence it enables organisations to extend their Azure control plane into on premise or 3rd party cloud environments, providing managagement and PaaS like services to these deployments.  Azure Arc has several [benefits](https://learn.microsoft.com/en-us/azure/azure-arc/overview#key-features-and-benefits) however one key result of an Arc deployment is that key metadata (Machine name, installed Windows version, SQL Server deployemnts etc) is imported into the [Azure Resource Graph](https://learn.microsoft.com/en-us/azure/governance/resource-graph/overview)
+
+Azure also provides the ability to create simple, [shared dashboards](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards) which can expose this Azure Resource Graph Metadata.  Therefore the following dashboards have been put together to provide not only useful views across the Arc estate but also to act as a demonstration of what is possible. Each tile in the dashboard contains a seperate Azure Resource Graph query and by clicking on the visualisation this underlying query can be exposed.
+
+## Azure Arc deployment for Windows, Linux & SQL Server  - a brief overview
+(Please note the scope of Arc is evolving and expanding - for example Azure Arc can be used to manage on premise Kubernetes Clusters - however here we will focus on Windows & Linux deployments) Azure Arc can be deployed on a per server basis or at scale using various methods.  Typically on a per server basis the following will happen:
+* Windows or Linux Arc Agent is installed and this lights up that server in Arc
+* The Server is checked to see if SQL Server is running
+* If SQL Server is present the SQL Server Agent is installed as an extension to the Arc Agent
+* SQL Server Instances, their underlying databases and attributes of each are loaded into the Azure Resource Graph
+
 # Installing the Dashboards
-Each Dashboard is simply a JSON file.  The simplest way to install the dashboard is to download one from the "Dashboards" folder, go to the Azure Portal, select "Dashboards", open any existing Dashboard (or create a new one) and select "Upload".  You can then select the respective JSON file and it wil be installed.
+Each Dashboard is simply a JSON file.  
+* Open the "Dashboards" folder in this repo and download your selected dashboard JSON document
+* Log on to the Azure Portal
+* Click on "Dashboard" from 
+
+The simplest way to install the dashboard is to download one from the "Dashboards" folder on this Repo, go to the Azure Portal, select "Dashboards", open any existing Dashboard (or create a new one) and select "Upload".  You can then select the respective JSON file and it wil be installed.
 
 **Please note** however that it will by default be created as a "Private" Dashboard meaning only you will be able to see it.  To make it available to your colleagues you can hit the "Share" button which will publish it to a shared dashboard area or a named resource group. 
 
