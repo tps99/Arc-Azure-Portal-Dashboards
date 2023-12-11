@@ -34,8 +34,12 @@ Current dashboards on the repo include:
 <img src="img/Arc Progress.png">
 (Note: may take some time to run on large Arc enabled estates)
 Collects together a number of metrics and views to track Arc rollout progress and to pick up on any gaps that may exist.  Arc deployments are reasonably straightforward however theer can be occasions when Servers are not fully discovered or connected to Arc.  This dashboard is intended as a tracker during that deployment and includes metrics and visualisations such as:
-
-, for example the number of VMs where SQL Server has been discovered vs the number of VMs that actually have the SQL Server Arc Agent installed.  Final Tiles provide detail queries for all Servers and all SQL Server instances, these can be downloaded as CSVs for further analysis
+* Total number of Servers (and Windows Servers) onboarded to Arc and how many are currently connected
+* Total number of SQL Servers discovered, and how many of those are Enterprise or Standard Edition
+* Visualisations showing the Windows Agent Status and SQL Server Agent Status breakdown (highlighting any gaps which may need to be addressed)
+* Servers onboarded per subscription (typically there will be a Target value for onboarding Servers to Arc and this may be broken down by subscription)
+* Donut charts of "Servers by OS" and "SQL Server by Version" showing the distribution of Windows and SQL Server Versions across the estate
+There are also several detail queries for all Servers and all SQL Server instances, these can be downloaded as CSVs for further analysis
 
 
 
