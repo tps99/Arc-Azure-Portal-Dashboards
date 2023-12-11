@@ -15,22 +15,27 @@ Azure also provides the ability to create simple, [shared dashboards](https://le
 * If SQL Server is present the SQL Server Agent is installed as an extension to the Arc Agent
 * SQL Server Instances, their underlying databases and attributes of each are loaded into the Azure Resource Graph
 
-# Installing the Dashboards
-Each Dashboard is simply a JSON file.  
+## Installing the Dashboards
+Each Dashboard is simply a JSON file.  Installing a new dashbaord is however a little counterintuitive as you have to be in an existing (or new) Dashoard to upload a new one  
 * Open the "Dashboards" folder in this repo and download your selected dashboard JSON document
 * Log on to the Azure Portal
-* Click on "Dashboard" from 
-
-The simplest way to install the dashboard is to download one from the "Dashboards" folder on this Repo, go to the Azure Portal, select "Dashboards", open any existing Dashboard (or create a new one) and select "Upload".  You can then select the respective JSON file and it wil be installed.
+* Click on "Dashboard" from the Azure Portal Menu
+* Click on "Create"
+* Select "Custom Dashboard" - when prompted to customise click on "Cancel"
+* Now select "Upload" and upload your selected JSON Document
 
 **Please note** however that it will by default be created as a "Private" Dashboard meaning only you will be able to see it.  To make it available to your colleagues you can hit the "Share" button which will publish it to a shared dashboard area or a named resource group. 
 
+# Current Dashboards
+There are a range of dashboards which give different overviews and slices ofthe underlying Metadata - overall the objective is to give an overview of some aspect of the Arc deployment
 Current dashboards on the repo include:
 
 ## ARC - Rollout Progress Tracker
 <img src="img/Arc Progress.png">
 (Note: may take some time to run on large Arc enabled estates)
-Collects together a number of metrics and views to track Arc rollout progress and to pick up on any gaps that may exist, for example the number of VMs where SQL Server has been discovered vs the number of VMs that actually have the SQL Server Arc Agent installed.  Final Tiles provide detail queries for all Servers and all SQL Server instances, these can be downloaded as CSVs for further analysis
+Collects together a number of metrics and views to track Arc rollout progress and to pick up on any gaps that may exist.  Arc deployments are reasonably straightforward however theer can be occasions when Servers are not fully discovered or connected to Arc.  This dashboard is intended as a tracker during that deployment and includes metrics and visualisations such as:
+
+, for example the number of VMs where SQL Server has been discovered vs the number of VMs that actually have the SQL Server Arc Agent installed.  Final Tiles provide detail queries for all Servers and all SQL Server instances, these can be downloaded as CSVs for further analysis
 
 
 
