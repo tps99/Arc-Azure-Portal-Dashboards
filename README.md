@@ -30,6 +30,7 @@ Each Dashboard is simply a JSON file.  Installing a new dashbaord is however a l
 There are a range of dashboards which give different overviews and slices ofthe underlying Metadata - the overall the objective is to give an overview of some aspect of the Arc deployment
 Current dashboards on the repo include:
 
+
 ## ARC - Rollout Progress Tracker
 <img src="img/Arc Progress.png">
 (Note: may take some time to run on large Arc enabled estates)
@@ -40,14 +41,21 @@ Collects together a number of metrics and views to track Arc rollout progress an
 * Visualisations showing the Windows Agent Status and SQL Server Agent Status breakdown (highlighting any gaps which may need to be addressed)
 * Servers onboarded per subscription (typically there will be a Target value for onboarding Servers to Arc and this may be broken down by subscription)
 * Donut charts of "Servers by OS" and "SQL Server by Version" showing the distribution of Windows and SQL Server Versions across the estate
-There are also several detail queries for all Servers and all SQL Server instances, these can be downloaded as CSVs for further analysis
+  
+There are also several detail queries for all Servers and all SQL Server instances, these can be downloaded as CSVs for further analysis.
+
+Smaller Arc deployments are usually fairly straightforward however this dashboard can be a useful progress tracker and earlier diagnostic tool as it can flag any discrepancies (such as the number of SQL Servers recognised vs the number of SQL Server instances installed - these numbers should match)
 
 
 
 ## ARC - Unified Server Inventory
 <img src="img/ArcServerInventory.png">
-Displays a full inventory of all Servers (Windows & Linux) registered to Arc.  Includes breakdowns by OS, OS Type (Standard and Data Center) and other Metrics
+Displays a full inventory of all Servers (Windows & Linux) registered to Arc.  The focus here is on Windows and Linux Servers (the next dashboard focuses on SQL Server).  Includes metrics such as:
 
+* Donut charts of "Servers by OS" and "Cores by OS" - giving 2 different views of the distribution of Windows and Linux Versions across the estate
+* Visualisation of Linux vs Windows in the Estate
+
+This is one of the first dashboards and may be useful for smaller Arc estates, however for more complex estates the "Arc - Estate Profile" Dashboard may be more suitable
 
 
 ## ARC - Unified SQL Server Inventory
